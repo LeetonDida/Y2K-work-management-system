@@ -1,0 +1,28 @@
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\Y2K WMS.exe
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\Y2K WMS.deps.json
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\Y2K WMS.runtimeconfig.json
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\Y2K WMS.runtimeconfig.dev.json
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\Y2K WMS.dll
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\ref\Y2K WMS.dll
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\Y2K WMS.pdb
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\System.Data.SqlClient.dll
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\runtimes\win-arm64\native\sni.dll
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\runtimes\win-x64\native\sni.dll
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\runtimes\win-x86\native\sni.dll
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\runtimes\unix\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\bin\Debug\net5.0-windows\runtimes\win\lib\netcoreapp2.1\System.Data.SqlClient.dll
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.csproj.AssemblyReference.cache
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K_WMS.LoginView.resources
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K_WMS.RegistrationView.resources
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.csproj.GenerateResource.cache
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.GeneratedMSBuildEditorConfig.editorconfig
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.AssemblyInfoInputs.cache
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.AssemblyInfo.cs
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.csproj.CoreCompileInputs.cache
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.csproj.CopyComplete
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.dll
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\ref\Y2K WMS.dll
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.pdb
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.genruntimeconfig.cache
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K_WMS.View.DashboardView.resources
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K_WMS.View.AddProjectView.resources

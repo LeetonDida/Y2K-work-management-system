@@ -1,0 +1,18 @@
+{
+  "version": 2,
+  "dgSpecHash": "JGcOFazm9zWlfzDndTD/aW5lozsfLmmC4CCVVSb0UzZhqp3qRLojt9WfloJyVMpHQk15d0NcD70THshnisxidA==",
+  "success": false,
+  "projectFilePath": "C:\\Users\\leeto\\source\\repos\\Y2K_work_management_system\\Y2K test project\\Y2K test project.csproj",
+  "expectedPackageFiles": [],
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Y2K WMS is not compatible with net5.0 (.NETCoreApp,Version=v5.0). Project Y2K WMS supports: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "Y2K WMS",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}

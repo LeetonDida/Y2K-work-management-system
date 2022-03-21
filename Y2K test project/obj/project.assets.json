@@ -1,0 +1,96 @@
+{
+  "version": 3,
+  "targets": {
+    "net5.0": {
+      "Y2K WMS/1.0.0": {
+        "type": "project",
+        "framework": "Unsupported,Version=v0.0",
+        "compile": {
+          "bin/placeholder/Y2K WMS.dll": {}
+        },
+        "runtime": {
+          "bin/placeholder/Y2K WMS.dll": {}
+        }
+      }
+    }
+  },
+  "libraries": {
+    "Y2K WMS/1.0.0": {
+      "type": "project",
+      "path": "../Y2K WMS/Y2K WMS.csproj",
+      "msbuildProject": "../Y2K WMS/Y2K WMS.csproj"
+    }
+  },
+  "projectFileDependencyGroups": {
+    "net5.0": [
+      "Y2K WMS >= 1.0.0"
+    ]
+  },
+  "packageFolders": {
+    "C:\\Users\\leeto\\.nuget\\packages\\": {}
+  },
+  "project": {
+    "version": "1.0.0",
+    "restore": {
+      "projectUniqueName": "C:\\Users\\leeto\\source\\repos\\Y2K_work_management_system\\Y2K test project\\Y2K test project.csproj",
+      "projectName": "Y2K test project",
+      "projectPath": "C:\\Users\\leeto\\source\\repos\\Y2K_work_management_system\\Y2K test project\\Y2K test project.csproj",
+      "packagesPath": "C:\\Users\\leeto\\.nuget\\packages\\",
+      "outputPath": "C:\\Users\\leeto\\source\\repos\\Y2K_work_management_system\\Y2K test project\\obj\\",
+      "projectStyle": "PackageReference",
+      "configFilePaths": [
+        "C:\\Users\\leeto\\AppData\\Roaming\\NuGet\\NuGet.Config",
+        "C:\\Program Files (x86)\\NuGet\\Config\\Microsoft.VisualStudio.Offline.config"
+      ],
+      "originalTargetFrameworks": [
+        "net5.0"
+      ],
+      "sources": {
+        "C:\\Program Files (x86)\\Microsoft SDKs\\NuGetPackages\\": {},
+        "https://api.nuget.org/v3/index.json": {}
+      },
+      "frameworks": {
+        "net5.0": {
+          "targetAlias": "net5.0",
+          "projectReferences": {
+            "C:\\Users\\leeto\\source\\repos\\Y2K_work_management_system\\Y2K WMS\\Y2K WMS.csproj": {
+              "projectPath": "C:\\Users\\leeto\\source\\repos\\Y2K_work_management_system\\Y2K WMS\\Y2K WMS.csproj"
+            }
+          }
+        }
+      },
+      "warningProperties": {
+        "warnAsError": [
+          "NU1605"
+        ]
+      }
+    },
+    "frameworks": {
+      "net5.0": {
+        "targetAlias": "net5.0",
+        "imports": [
+          "net461",
+          "net462",
+          "net47",
+          "net471",
+          "net472",
+          "net48"
+        ],
+        "assetTargetFallback": true,
+        "warn": true,
+        "runtimeIdentifierGraphPath": "C:\\Program Files\\dotnet\\sdk\\5.0.406\\RuntimeIdentifierGraph.json"
+      }
+    }
+  },
+  "logs": [
+    {
+      "code": "NU1201",
+      "level": "Error",
+      "message": "Project Y2K WMS is not compatible with net5.0 (.NETCoreApp,Version=v5.0). Project Y2K WMS supports: net5.0-windows7.0 (.NETCoreApp,Version=v5.0)",
+      "libraryId": "Y2K WMS",
+      "targetGraphs": [
+        "net5.0"
+      ]
+    }
+  ]
+}
