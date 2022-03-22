@@ -8,7 +8,8 @@ namespace Y2K_WMS.Model
 {
     class TaskModel
     {
-        //public int projectID { get; set; }
+        public int projectID { get; }
+        public int Id { get; set; }
         public string name { get; set; }
         public string subTask { get; set; }
         public string comment { get; set; }

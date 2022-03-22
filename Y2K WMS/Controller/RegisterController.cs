@@ -5,6 +5,7 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Data.SqlClient;
 using System.Configuration;
+using System.Windows.Forms;
 
 namespace Y2K_WMS
 {
@@ -19,6 +20,7 @@ namespace Y2K_WMS
             string query =string.Format( "insert into Users values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", person.firstName, person.lastName, person.email.ToLower(), person.phone, person.isAdmin, person.password);
 
             SqlCommand command = new SqlCommand(query, connection);
+            MessageBox.Show(query);
             int i = command.ExecuteNonQuery();
             connection.Close();
             if (!(i <1))

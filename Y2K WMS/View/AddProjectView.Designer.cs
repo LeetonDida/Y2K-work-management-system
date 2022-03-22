@@ -44,8 +44,8 @@ namespace Y2K_WMS.View
             this.txtSubTasks = new System.Windows.Forms.TextBox();
             this.label4 = new System.Windows.Forms.Label();
             this.txtComments = new System.Windows.Forms.TextBox();
-            this.groupBox1 = new System.Windows.Forms.GroupBox();
-            this.groupBox2 = new System.Windows.Forms.GroupBox();
+            this.grpBoxAddTasks = new System.Windows.Forms.GroupBox();
+            this.grpBoxAssignMembers = new System.Windows.Forms.GroupBox();
             this.btnAssignMember = new System.Windows.Forms.Button();
             this.lstBxAssignedMembers = new System.Windows.Forms.ListBox();
             this.cmboBxSelectMember = new System.Windows.Forms.ComboBox();
@@ -53,12 +53,18 @@ namespace Y2K_WMS.View
             this.btnCreateProject = new System.Windows.Forms.Button();
             this.txtProjectTitle = new System.Windows.Forms.TextBox();
             this.label1 = new System.Windows.Forms.Label();
-            this.button1 = new System.Windows.Forms.Button();
             this.bindingSource1 = new System.Windows.Forms.BindingSource(this.components);
+            this.label6 = new System.Windows.Forms.Label();
+            this.label7 = new System.Windows.Forms.Label();
+            this.rdoBtnNo = new System.Windows.Forms.RadioButton();
+            this.rdoBtnYes = new System.Windows.Forms.RadioButton();
+            this.groupBox3 = new System.Windows.Forms.GroupBox();
+            this.btnFinish = new System.Windows.Forms.Button();
             this.menuStrip1.SuspendLayout();
-            this.groupBox1.SuspendLayout();
-            this.groupBox2.SuspendLayout();
+            this.grpBoxAddTasks.SuspendLayout();
+            this.grpBoxAssignMembers.SuspendLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).BeginInit();
+            this.groupBox3.SuspendLayout();
             this.SuspendLayout();
             // 
             // menuStrip1
@@ -169,34 +175,34 @@ namespace Y2K_WMS.View
             this.txtComments.Size = new System.Drawing.Size(217, 23);
             this.txtComments.TabIndex = 3;
             // 
-            // groupBox1
+            // grpBoxAddTasks
             // 
-            this.groupBox1.Controls.Add(this.button1);
-            this.groupBox1.Controls.Add(this.txtSubTasks);
-            this.groupBox1.Controls.Add(this.txtTaskName);
-            this.groupBox1.Controls.Add(this.label2);
-            this.groupBox1.Controls.Add(this.txtComments);
-            this.groupBox1.Controls.Add(this.label4);
-            this.groupBox1.Controls.Add(this.label3);
-            this.groupBox1.Location = new System.Drawing.Point(61, 110);
-            this.groupBox1.Name = "groupBox1";
-            this.groupBox1.Size = new System.Drawing.Size(920, 238);
-            this.groupBox1.TabIndex = 4;
-            this.groupBox1.TabStop = false;
-            this.groupBox1.Text = "Add tasks";
+            this.grpBoxAddTasks.Controls.Add(this.txtSubTasks);
+            this.grpBoxAddTasks.Controls.Add(this.txtTaskName);
+            this.grpBoxAddTasks.Controls.Add(this.label6);
+            this.grpBoxAddTasks.Controls.Add(this.label2);
+            this.grpBoxAddTasks.Controls.Add(this.txtComments);
+            this.grpBoxAddTasks.Controls.Add(this.label4);
+            this.grpBoxAddTasks.Controls.Add(this.label3);
+            this.grpBoxAddTasks.Location = new System.Drawing.Point(61, 110);
+            this.grpBoxAddTasks.Name = "grpBoxAddTasks";
+            this.grpBoxAddTasks.Size = new System.Drawing.Size(920, 238);
+            this.grpBoxAddTasks.TabIndex = 4;
+            this.grpBoxAddTasks.TabStop = false;
+            this.grpBoxAddTasks.Text = "Add tasks";
             // 
-            // groupBox2
+            // grpBoxAssignMembers
             // 
-            this.groupBox2.Controls.Add(this.btnAssignMember);
-            this.groupBox2.Controls.Add(this.lstBxAssignedMembers);
-            this.groupBox2.Controls.Add(this.cmboBxSelectMember);
-            this.groupBox2.Controls.Add(this.label5);
-            this.groupBox2.Location = new System.Drawing.Point(61, 364);
-            this.groupBox2.Name = "groupBox2";
-            this.groupBox2.Size = new System.Drawing.Size(920, 314);
-            this.groupBox2.TabIndex = 4;
-            this.groupBox2.TabStop = false;
-            this.groupBox2.Text = "Assign members";
+            this.grpBoxAssignMembers.Controls.Add(this.btnAssignMember);
+            this.grpBoxAssignMembers.Controls.Add(this.lstBxAssignedMembers);
+            this.grpBoxAssignMembers.Controls.Add(this.cmboBxSelectMember);
+            this.grpBoxAssignMembers.Controls.Add(this.label5);
+            this.grpBoxAssignMembers.Location = new System.Drawing.Point(61, 466);
+            this.grpBoxAssignMembers.Name = "grpBoxAssignMembers";
+            this.grpBoxAssignMembers.Size = new System.Drawing.Size(920, 254);
+            this.grpBoxAssignMembers.TabIndex = 4;
+            this.grpBoxAssignMembers.TabStop = false;
+            this.grpBoxAssignMembers.Text = "Assign members";
             // 
             // btnAssignMember
             // 
@@ -214,7 +220,7 @@ namespace Y2K_WMS.View
             this.lstBxAssignedMembers.ItemHeight = 15;
             this.lstBxAssignedMembers.Location = new System.Drawing.Point(242, 108);
             this.lstBxAssignedMembers.Name = "lstBxAssignedMembers";
-            this.lstBxAssignedMembers.Size = new System.Drawing.Size(457, 169);
+            this.lstBxAssignedMembers.Size = new System.Drawing.Size(457, 124);
             this.lstBxAssignedMembers.TabIndex = 4;
             // 
             // cmboBxSelectMember
@@ -236,7 +242,7 @@ namespace Y2K_WMS.View
             // 
             // btnCreateProject
             // 
-            this.btnCreateProject.Location = new System.Drawing.Point(460, 697);
+            this.btnCreateProject.Location = new System.Drawing.Point(439, 339);
             this.btnCreateProject.Name = "btnCreateProject";
             this.btnCreateProject.Size = new System.Drawing.Size(160, 31);
             this.btnCreateProject.TabIndex = 5;
@@ -260,37 +266,92 @@ namespace Y2K_WMS.View
             this.label1.TabIndex = 6;
             this.label1.Text = "Project title";
             // 
-            // button1
+            // label6
             // 
-            this.button1.Location = new System.Drawing.Point(580, 193);
-            this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(117, 23);
-            this.button1.TabIndex = 4;
-            this.button1.Text = "Add task";
-            this.button1.UseVisualStyleBackColor = true;
-            this.button1.Click += new System.EventHandler(this.button1_Click);
+            this.label6.AutoSize = true;
+            this.label6.Location = new System.Drawing.Point(700, 143);
+            this.label6.Name = "label6";
+            this.label6.Size = new System.Drawing.Size(59, 15);
+            this.label6.TabIndex = 2;
+            this.label6.Text = "(optional)";
+            // 
+            // label7
+            // 
+            this.label7.AutoSize = true;
+            this.label7.Location = new System.Drawing.Point(136, 415);
+            this.label7.Name = "label7";
+            this.label7.Size = new System.Drawing.Size(285, 15);
+            this.label7.TabIndex = 2;
+            this.label7.Text = "Do you waish to assign members to the new project?";
+            // 
+            // rdoBtnNo
+            // 
+            this.rdoBtnNo.AutoSize = true;
+            this.rdoBtnNo.Checked = true;
+            this.rdoBtnNo.Location = new System.Drawing.Point(54, 15);
+            this.rdoBtnNo.Name = "rdoBtnNo";
+            this.rdoBtnNo.Size = new System.Drawing.Size(41, 19);
+            this.rdoBtnNo.TabIndex = 8;
+            this.rdoBtnNo.TabStop = true;
+            this.rdoBtnNo.Text = "No";
+            this.rdoBtnNo.UseVisualStyleBackColor = true;
+            // 
+            // rdoBtnYes
+            // 
+            this.rdoBtnYes.AutoSize = true;
+            this.rdoBtnYes.Location = new System.Drawing.Point(6, 15);
+            this.rdoBtnYes.Name = "rdoBtnYes";
+            this.rdoBtnYes.Size = new System.Drawing.Size(42, 19);
+            this.rdoBtnYes.TabIndex = 8;
+            this.rdoBtnYes.Text = "Yes";
+            this.rdoBtnYes.UseVisualStyleBackColor = true;
+            // 
+            // groupBox3
+            // 
+            this.groupBox3.Controls.Add(this.rdoBtnNo);
+            this.groupBox3.Controls.Add(this.rdoBtnYes);
+            this.groupBox3.Location = new System.Drawing.Point(467, 400);
+            this.groupBox3.Name = "groupBox3";
+            this.groupBox3.Size = new System.Drawing.Size(113, 39);
+            this.groupBox3.TabIndex = 9;
+            this.groupBox3.TabStop = false;
+            this.groupBox3.Enter += new System.EventHandler(this.groupBox3_Enter);
+            // 
+            // btnFinish
+            // 
+            this.btnFinish.Location = new System.Drawing.Point(439, 737);
+            this.btnFinish.Name = "btnFinish";
+            this.btnFinish.Size = new System.Drawing.Size(167, 38);
+            this.btnFinish.TabIndex = 10;
+            this.btnFinish.Text = "Finish";
+            this.btnFinish.UseVisualStyleBackColor = true;
             // 
             // AddProjectView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.AutoSize = true;
-            this.ClientSize = new System.Drawing.Size(1066, 754);
+            this.ClientSize = new System.Drawing.Size(1066, 797);
+            this.Controls.Add(this.btnFinish);
+            this.Controls.Add(this.groupBox3);
             this.Controls.Add(this.txtProjectTitle);
             this.Controls.Add(this.label1);
             this.Controls.Add(this.btnCreateProject);
             this.Controls.Add(this.menuStrip1);
-            this.Controls.Add(this.groupBox2);
-            this.Controls.Add(this.groupBox1);
+            this.Controls.Add(this.label7);
+            this.Controls.Add(this.grpBoxAssignMembers);
+            this.Controls.Add(this.grpBoxAddTasks);
             this.Name = "AddProjectView";
             this.Text = "Add Project";
             this.menuStrip1.ResumeLayout(false);
             this.menuStrip1.PerformLayout();
-            this.groupBox1.ResumeLayout(false);
-            this.groupBox1.PerformLayout();
-            this.groupBox2.ResumeLayout(false);
-            this.groupBox2.PerformLayout();
+            this.grpBoxAddTasks.ResumeLayout(false);
+            this.grpBoxAddTasks.PerformLayout();
+            this.grpBoxAssignMembers.ResumeLayout(false);
+            this.grpBoxAssignMembers.PerformLayout();
             ((System.ComponentModel.ISupportInitialize)(this.bindingSource1)).EndInit();
+            this.groupBox3.ResumeLayout(false);
+            this.groupBox3.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -310,8 +371,8 @@ namespace Y2K_WMS.View
         private System.Windows.Forms.TextBox txtSubTasks;
         private System.Windows.Forms.Label label4;
         private System.Windows.Forms.TextBox txtComments;
-        private System.Windows.Forms.GroupBox groupBox1;
-        private System.Windows.Forms.GroupBox groupBox2;
+        private System.Windows.Forms.GroupBox grpBoxAddTasks;
+        private System.Windows.Forms.GroupBox grpBoxAssignMembers;
         private System.Windows.Forms.Button btnAssignMember;
         private System.Windows.Forms.ListBox lstBxAssignedMembers;
         private System.Windows.Forms.ComboBox cmboBxSelectMember;
@@ -319,9 +380,14 @@ namespace Y2K_WMS.View
         private System.Windows.Forms.Button btnCreateProject;
         private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem assignTasksToolStripMenuItem;
-        private System.Windows.Forms.Button button1;
         private System.Windows.Forms.TextBox txtProjectTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource bindingSource1;
+        private System.Windows.Forms.Label label6;
+        private System.Windows.Forms.Label label7;
+        private System.Windows.Forms.RadioButton rdoBtnNo;
+        private System.Windows.Forms.RadioButton rdoBtnYes;
+        private System.Windows.Forms.GroupBox groupBox3;
+        private System.Windows.Forms.Button btnFinish;
     }
 }
