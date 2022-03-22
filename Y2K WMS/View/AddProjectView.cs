@@ -26,6 +26,20 @@ namespace Y2K_WMS.View
             InitializeComponent();
             loadComboBox();
             btnFinish.Enabled = false;
+            if (rdoBtnNo.Checked == true)
+            {
+                grpBoxAssignMembers.Enabled = false;
+                btnFinish.Enabled = true;
+            }
+            else
+            {
+                grpBoxAssignMembers.Enabled = true;
+                if (!(lstBxAssignedMembers.Items.Count == 0 && cmboBxSelectMember.SelectedItem.ToString() == ""))
+                {
+                    btnFinish.Enabled = false;
+                }
+                
+            }
         }
 
 
@@ -78,46 +92,79 @@ namespace Y2K_WMS.View
 
         private void btnAssignMember_Click(object sender, EventArgs e)
         {
-            if (lstBxAssignedMembers.Items.Count == 0 || cmboBxSelectMember.SelectedItem.ToString() == "")
+            List<string> assignedMembers = new List<string>();
+
+            if (string.IsNullOrEmpty(cmboBxSelectMember.Text))
             {
-                MessageBox.Show("Please assign at least one member to the project.", "Insuffisient details");
+                MessageBox.Show("Please assign at least one member to the project.", "Insufficient details");
             }
             else
             {
-                lstBxAssignedMembers.Items.Add(cmboBxSelectMember.SelectedItem.ToString());
-                btnFinish.Enabled = true;
+                if(!assignedMembers.Contains(cmboBxSelectMember.SelectedItem))
+                {
+                    assignedMembers.Add(cmboBxSelectMember.SelectedItem.ToString());
+                    lstBxAssignedMembers.Items.Add(cmboBxSelectMember.SelectedItem.ToString());
+                    btnFinish.Enabled = true;
+                }
+                else
+                {
+                    MessageBox.Show("The member selected has already been assigned to the project");
+                }
+                
             }
         }
 
         private void loadComboBox()
         {
-            try
+            string query = "SELECT firstName, lastName FROM Users where isAdmin = 'false'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            for(int i = 0; i < table.Rows.Count; ++i)
             {
-                string query = "SELECT firstName FROM Users where isAdmin = 'false'";
-                connection.Open();
-                SqlCommand command = new SqlCommand(query, connection);
-                SqlDataReader reader = command.ExecuteReader();
-                while (reader.Read())
-                {
-                    cmboBxSelectMember.Items.Add(reader.GetString("id"));
-                }
+                string member = Convert.ToString(table.Rows[i]["firstName"]) +" "+ Convert.ToString(table.Rows[i]["lastName"]);
+                cmboBxSelectMember.Items.Add(member);
             }
-            catch 
-            {
-                MessageBox.Show("error loading members", "error");
-            }
+
         }
 
         private void groupBox3_Enter(object sender, EventArgs e)
         {
-            if(rdoBtnNo.Checked == true)
+           
+        }
+
+        private void btnFinish_Click(object sender, EventArgs e)
+        {
+            if (lstBxAssignedMembers.Items.Count == 0 || cmboBxSelectMember.SelectedItem.ToString() == "")
+            {
+                MessageBox.Show("Please assign at least one member to the project.", "Insuffisient details");
+            }
+        }
+
+        private void rdoBtnNo_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoBtnNo.Checked == true)
+            {
+                grpBoxAssignMembers.Enabled = false;
+            }
+            else
+            {
+                grpBoxAssignMembers.Enabled = true;
+                btnFinish.Enabled = true;
+            }
+        }
+
+        private void rdoBtnYes_CheckedChanged(object sender, EventArgs e)
+        {
+            if (rdoBtnYes.Checked == true)
             {
                 grpBoxAssignMembers.Enabled = true;
             }
             else
             {
                 grpBoxAssignMembers.Enabled = false;
-                btnFinish.Enabled = true;
+                //btnFinish.Enabled = false;
             }
         }
     }

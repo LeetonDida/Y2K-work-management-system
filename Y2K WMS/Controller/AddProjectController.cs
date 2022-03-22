@@ -13,7 +13,7 @@ namespace Y2K_WMS.Controller
         SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
         AttachDbFilename=C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\Y2Kdb.mdf;Integrated Security=True");
 
-        int insertedId;
+        int insertedProjectId;
 
         public bool InsertData(Model.TaskModel task, Model.ProjectModel projectModel, string comment)
         {
@@ -69,9 +69,9 @@ namespace Y2K_WMS.Controller
         {
             MessageBox.Show(projectModel.Id.ToString());
             connection.Open();
-            string query = string.Format("insert into Task (name, subTask) values ('{0}', '{1}')", task.name, task.subTask);
+            string query = string.Format("insert into Task (name, subTask, projectID) values ('{0}', '{1}', '{2}')", task.name, task.subTask, insertedProjectId);
             SqlCommand command = new SqlCommand(query, connection);
-            int i = command.ExecuteNonQuery();
+            int i = command.ExecuteNonQuery(); //insert projectid
             connection.Close();
             if (!(i < 1))
             {
@@ -89,12 +89,14 @@ namespace Y2K_WMS.Controller
         string query = string.Format("insert into Project (projectName) values ('{0}'); SELECT SCOPE_IDENTITY()", projectModel.projectName);
 
         SqlCommand command = new SqlCommand(query, connection);
-        insertedId = (int)command.ExecuteScalar();
-        int i = command.ExecuteNonQuery();
+        string result = Convert.ToString(command.ExecuteScalar());
+       // MessageBox.Show("ID of projec is: " + insertedProjectId);
+       // int i = command.ExecuteNonQuery();
         connection.Close();
-        if (!(i < 1))
+        if (!(result == null))
         {
-            return true;
+                insertedProjectId = Convert.ToInt32(result);
+                return true;
         }
         else
         {
