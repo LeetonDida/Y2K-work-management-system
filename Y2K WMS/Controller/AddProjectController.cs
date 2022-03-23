@@ -1,5 +1,6 @@
 ﻿using System;
 using System.Collections.Generic;
+using System.Data;
 using System.Data.SqlClient;
 using System.Linq;
 using System.Text;
@@ -49,7 +50,7 @@ namespace Y2K_WMS.Controller
         private bool AddTask(Model.TaskModel task, string comment)
         {
             connection.Open();
-            string query = string.Format("insert into Task values ('{0}', '{1}', '{2}')", task.name, task.subTask, comment);
+            string query = string.Format("insert into Task values ('{0}', '{1}', '{2}', '{3}')",insertedProjectId, task.name, task.subTask, comment);
 
             SqlCommand command = new SqlCommand(query, connection);
             int i = command.ExecuteNonQuery();
@@ -111,7 +112,7 @@ namespace Y2K_WMS.Controller
             {
                 //string[] memberName = assignedMembers[i].Split(' ');
                 
-                string query = string.Format("UPDATE Developer SET (projectId) = ({0}) WHERE Id = ({1})", insertedProjectId, userId[k]);
+                string query = string.Format("UPDATE Developer SET projectId = '{0}' WHERE Id = {1}", insertedProjectId, userId[k]);
                 SqlCommand command = new SqlCommand(query, connection);
                 i += command.ExecuteNonQuery();//FIX THE EXCEPTION HERE
             }
@@ -124,6 +125,23 @@ namespace Y2K_WMS.Controller
             {
                 return false;
             }
+        }
+
+        public void loadComboBox(ComboBox selectedMemberCmboBox, List<int> assignedUserId)
+        {
+            string query = "SELECT Id, firstName, lastName FROM Users where isAdmin = 'false'";
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+
+            for (int i = 0; i < table.Rows.Count; ++i)
+            {
+                assignedUserId.Add((int)table.Rows[i]["Id"]);
+                string member = Convert.ToString(table.Rows[i]["firstName"]) + " " + Convert.ToString(table.Rows[i]["lastName"]);
+                selectedMemberCmboBox.Items.Add(member);
+            }
+
         }
     }
 }

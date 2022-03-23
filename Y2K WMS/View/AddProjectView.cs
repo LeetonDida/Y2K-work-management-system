@@ -13,13 +13,13 @@ namespace Y2K_WMS.View
 {
     public partial class AddProjectView : Form
     {
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
-        AttachDbFilename=C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\Y2Kdb.mdf;Integrated Security=True");
+        //SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
+        //AttachDbFilename=C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\Y2Kdb.mdf;Integrated Security=True");
 
         Model.ProjectModel project = new Model.ProjectModel();
         Model.TaskModel task = new Model.TaskModel();
 
-        Controller.AddProjectController projectController = new Controller.AddProjectController();
+        Controller.AddProjectController controller = new Controller.AddProjectController();
 
         List<string> assignedMembers = new List<string>();
         List<int> assignedUserId = new List<int>();
@@ -27,17 +27,11 @@ namespace Y2K_WMS.View
         public AddProjectView()
         {
             InitializeComponent();
-            loadComboBox();
-            btnCreateProject.Enabled = false;
-
             ComboBox selectedMemberCmboBox = cmboBxSelectMember;
             ListBox assignedMembersLstBox = lstBxAssignedMembers;
-            //if (!(string.IsNullOrEmpty(assignedMembersLstBox.Text) && string.IsNullOrEmpty(cmboBxSelectMember.Text)))
-            //{
-            //    btnCreateProject.Enabled = true;
-            //}
 
-
+            controller.loadComboBox(selectedMemberCmboBox, assignedUserId);
+            btnCreateProject.Enabled = false;
         }
 
 
@@ -73,7 +67,7 @@ namespace Y2K_WMS.View
                 }
 
                 //checking if insertion succeded
-                if (projectController.InsertData(task, project, comment))
+                if (controller.InsertData(task, project, comment))
                 {
                     MessageBox.Show("Project created succesfully.");
                     grpBoxAddTasks.Enabled = false;
@@ -112,23 +106,6 @@ namespace Y2K_WMS.View
             }
         }
 
-        private void loadComboBox()
-        {
-            string query = "SELECT Id, firstName, lastName FROM Users where isAdmin = 'false'";
-            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
-            DataTable table = new DataTable();
-            adapter.Fill(table);
-
-
-            for (int i = 0; i < table.Rows.Count; ++i)
-            {
-                assignedUserId.Add((int)table.Rows[i]["Id"]);
-                string member = Convert.ToString(table.Rows[i]["firstName"]) + " " + Convert.ToString(table.Rows[i]["lastName"]);
-                cmboBxSelectMember.Items.Add(member);
-            }
-
-        }
-
         private void groupBox3_Enter(object sender, EventArgs e)
         {
 
@@ -143,7 +120,7 @@ namespace Y2K_WMS.View
 
             else
             {
-                bool check = projectController.AssignProject(assignedMembers, assignedUserId);
+                bool check = controller.AssignProject(assignedMembers, assignedUserId);
                 if (check)
                 {
                     MessageBox.Show("Members assigned successfully", "Success");

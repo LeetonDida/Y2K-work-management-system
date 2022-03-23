@@ -35,7 +35,6 @@ namespace Y2K_WMS.View
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.projectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.assignTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.label2 = new System.Windows.Forms.Label();
@@ -93,22 +92,14 @@ namespace Y2K_WMS.View
             // addProjectToolStripMenuItem
             // 
             this.addProjectToolStripMenuItem.Name = "addProjectToolStripMenuItem";
-            this.addProjectToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
+            this.addProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
             this.addProjectToolStripMenuItem.Text = "Add project";
             // 
             // projectToolStripMenuItem
             // 
-            this.projectToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.assignTasksToolStripMenuItem});
             this.projectToolStripMenuItem.Name = "projectToolStripMenuItem";
-            this.projectToolStripMenuItem.Size = new System.Drawing.Size(136, 22);
-            this.projectToolStripMenuItem.Text = "Project";
-            // 
-            // assignTasksToolStripMenuItem
-            // 
-            this.assignTasksToolStripMenuItem.Name = "assignTasksToolStripMenuItem";
-            this.assignTasksToolStripMenuItem.Size = new System.Drawing.Size(138, 22);
-            this.assignTasksToolStripMenuItem.Text = "Assign tasks";
+            this.projectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.projectToolStripMenuItem.Text = "Edit project";
             // 
             // logoutToolStripMenuItem
             // 
@@ -318,7 +309,6 @@ namespace Y2K_WMS.View
         private System.Windows.Forms.Label label5;
         private System.Windows.Forms.Button btnCreateProject;
         private System.Windows.Forms.ToolStripMenuItem projectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem assignTasksToolStripMenuItem;
         private System.Windows.Forms.TextBox txtProjectTitle;
         private System.Windows.Forms.Label label1;
         private System.Windows.Forms.BindingSource bindingSource1;

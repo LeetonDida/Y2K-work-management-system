@@ -17,7 +17,7 @@ namespace Y2K_WMS
             Application.SetHighDpiMode(HighDpiMode.SystemAware);
             Application.EnableVisualStyles();
             Application.SetCompatibleTextRenderingDefault(false);
-            Application.Run(new LoginView());
+            Application.Run(new View.DashboardView());
         }
     }
 }
