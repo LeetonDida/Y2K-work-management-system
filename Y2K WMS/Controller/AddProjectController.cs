@@ -90,7 +90,6 @@ namespace Y2K_WMS.Controller
 
         SqlCommand command = new SqlCommand(query, connection);
         string result = Convert.ToString(command.ExecuteScalar());
-       // MessageBox.Show("ID of projec is: " + insertedProjectId);
        // int i = command.ExecuteNonQuery();
         connection.Close();
         if (!(result == null))
@@ -103,5 +102,28 @@ namespace Y2K_WMS.Controller
             return false;
         }
     }
-}
+
+        internal bool AssignProject(List<string> assignedMembers, List<int> userId)
+        {
+            int i = 0;
+            connection.Open();
+            for (int k = 0; k < userId.Count; ++k)
+            {
+                //string[] memberName = assignedMembers[i].Split(' ');
+                
+                string query = string.Format("UPDATE Developer SET (projectId) = ({0}) WHERE Id = ({1})", insertedProjectId, userId[k]);
+                SqlCommand command = new SqlCommand(query, connection);
+                i += command.ExecuteNonQuery();//FIX THE EXCEPTION HERE
+            }
+            connection.Close();
+            if (!(i < 1))
+            {
+                return true;
+            }
+            else
+            {
+                return false;
+            }
+        }
+    }
 }

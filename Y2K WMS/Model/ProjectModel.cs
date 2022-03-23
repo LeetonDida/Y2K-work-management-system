@@ -10,6 +10,7 @@ namespace Y2K_WMS.Model
     {
         //public int taskID { get; set; }
         public int Id { get; set; }
+        public int developerId { get; set; }
         public string projectName { get; set; }
         public int completionStatus { get; set; }
     }

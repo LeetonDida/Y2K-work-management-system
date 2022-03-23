@@ -19,6 +19,15 @@ namespace Y2K_WMS
             connection.Open();
             string query =string.Format( "insert into Users values ('{0}', '{1}', '{2}', '{3}', '{4}', '{5}')", person.firstName, person.lastName, person.email.ToLower(), person.phone, person.isAdmin, person.password);
 
+            if(person.isAdmin == "true")
+            {
+                insertIntoAdmin(person);
+            }
+            else
+            {
+                insertIntoDeveloper(person);
+            }
+
             SqlCommand command = new SqlCommand(query, connection);
             MessageBox.Show(query);
             int i = command.ExecuteNonQuery();
@@ -33,7 +42,45 @@ namespace Y2K_WMS
             }
             
         }
-        
+
+        private void insertIntoDeveloper(PersonModel person)
+        {
+           
+            string query = string.Format("insert into Developer (firstName, lastName, email, phone, password) values ('{0}', '{1}', '{2}', '{3}', '{4}')", person.firstName, person.lastName, person.email.ToLower(), person.phone, person.password);
+
+            SqlCommand command = new SqlCommand(query, connection);
+            MessageBox.Show(query);
+            int i = command.ExecuteNonQuery();
+            
+            if (!(i < 1))
+            {
+                MessageBox.Show("succesfully inserted into developer table");//delete this
+            }
+            else
+            {
+                MessageBox.Show("failed to insert into developer table");//delete this
+            }
+           
+        }
+
+        private void insertIntoAdmin(PersonModel person)
+        {
+            
+            string query = string.Format("insert into Admin (firstName, lastName, email, phone, password) values ('{0}', '{1}', '{2}', '{3}', '{4}')", person.firstName, person.lastName, person.email.ToLower(), person.phone, person.password);
+
+            SqlCommand command = new SqlCommand(query, connection);
+            MessageBox.Show(query);
+            int i = command.ExecuteNonQuery();
+            
+            if (!(i < 1))
+            {
+                MessageBox.Show("succesfully inserted into developer table");//delete this
+            }
+            else
+            {
+                MessageBox.Show("failed to insert into admin table");//delete this
+            }
+        }
     }
     
 }
