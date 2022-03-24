@@ -15,14 +15,13 @@ namespace Y2K_WMS.View
     {
         AddProjectView addProject = new AddProjectView();
 
-        SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
-        AttachDbFilename=C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\Y2Kdb.mdf;Integrated Security=True");
+
 
         Controller.DashboardController dashboardController = new Controller.DashboardController();
         List<int> projectId = new List<int>();
         ComboBox projectCmboBox;
         ListBox assignedMembersLstBox;
-        ListBox tasksLstBox;
+
 
         public DashboardView()
         {
@@ -48,7 +47,6 @@ namespace Y2K_WMS.View
         private void cmboBxSelectProject_SelectedIndexChanged(object sender, EventArgs e)
         {
             Label lblCompletionStatus = lblProjectStatus;
-            tasksLstBox = lstBoxTasks;
             dashboardController.updateDashBoard(projectCmboBox, lblProjectStatus, assignedMembersLstBox, lstBoxTasks);
 
         }

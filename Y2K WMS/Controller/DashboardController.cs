@@ -28,7 +28,6 @@ namespace Y2K_WMS.Controller
                 string member = Convert.ToString(table.Rows[i]["projectName"]);
                 projectCmboBox.Items.Add(member);
             }
-
         }
 
         internal void updateDashBoard(ComboBox projectCmboBox, Label lblCompletionStatus, ListBox assignedMembers, ListBox tasks)
@@ -45,7 +44,7 @@ namespace Y2K_WMS.Controller
             //updates the completion status label
             lblCompletionStatus.Text = completionStatus;
 
-            updateTaskListBox(selectedProjectId, assignedMembers);
+            updateMembersListBox(selectedProjectId, assignedMembers);
             updateTaskListBox(tasks, selectedProjectId);
 
         }
@@ -65,7 +64,7 @@ namespace Y2K_WMS.Controller
             }
         }
 
-        internal void updateTaskListBox(string projectId, ListBox assignedMembers)
+        internal void updateMembersListBox(string projectId, ListBox assignedMembers)
         {
             assignedMembers.Items.Clear();
             string query = string.Format("SELECT * from Developer where projectId = '{0}'", projectId);

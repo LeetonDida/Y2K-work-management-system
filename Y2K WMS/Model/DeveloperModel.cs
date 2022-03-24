@@ -9,5 +9,6 @@ namespace Y2K_WMS.Model
     public class DeveloperModel : PersonModel
     {
         public int projectId { get; set; }
+        public int taskId { get; set; }
     }
 }

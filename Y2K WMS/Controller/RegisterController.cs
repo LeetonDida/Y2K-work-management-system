@@ -29,7 +29,6 @@ namespace Y2K_WMS
             }
 
             SqlCommand command = new SqlCommand(query, connection);
-            MessageBox.Show(query);
             int i = command.ExecuteNonQuery();
             connection.Close();
             if (!(i <1))
@@ -49,7 +48,6 @@ namespace Y2K_WMS
             string query = string.Format("insert into Developer (firstName, lastName, email, phone, password) values ('{0}', '{1}', '{2}', '{3}', '{4}')", person.firstName, person.lastName, person.email.ToLower(), person.phone, person.password);
 
             SqlCommand command = new SqlCommand(query, connection);
-            MessageBox.Show(query);
             int i = command.ExecuteNonQuery();
             
             if (!(i < 1))
@@ -69,7 +67,6 @@ namespace Y2K_WMS
             string query = string.Format("insert into Admin (firstName, lastName, email, phone, password) values ('{0}', '{1}', '{2}', '{3}', '{4}')", person.firstName, person.lastName, person.email.ToLower(), person.phone, person.password);
 
             SqlCommand command = new SqlCommand(query, connection);
-            MessageBox.Show(query);
             int i = command.ExecuteNonQuery();
             
             if (!(i < 1))

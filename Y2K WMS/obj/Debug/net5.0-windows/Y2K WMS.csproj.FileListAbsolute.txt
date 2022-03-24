@@ -26,3 +26,5 @@ C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-
 C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K WMS.genruntimeconfig.cache
 C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K_WMS.View.DashboardView.resources
 C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K_WMS.View.AddProjectView.resources
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K_WMS.View.EditProjectView.resources
+C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\obj\Debug\net5.0-windows\Y2K_WMS.View.AllocateTaskView.resources
