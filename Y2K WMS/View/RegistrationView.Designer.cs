@@ -46,22 +46,13 @@ namespace Y2K_WMS
             this.txtReenterPassword = new System.Windows.Forms.TextBox();
             this.registerBtn = new System.Windows.Forms.Button();
             this.backBtn = new System.Windows.Forms.Button();
-            this.menuStrip1 = new System.Windows.Forms.MenuStrip();
-            this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.addProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.editProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.allocateTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
-            this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
             this.groupBox1.SuspendLayout();
-            this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
             // label1
             // 
             this.label1.AutoSize = true;
-            this.label1.Location = new System.Drawing.Point(209, 50);
+            this.label1.Location = new System.Drawing.Point(211, 40);
             this.label1.Name = "label1";
             this.label1.Size = new System.Drawing.Size(62, 15);
             this.label1.TabIndex = 1;
@@ -69,7 +60,7 @@ namespace Y2K_WMS
             // 
             // txtFirstName
             // 
-            this.txtFirstName.Location = new System.Drawing.Point(341, 50);
+            this.txtFirstName.Location = new System.Drawing.Point(343, 40);
             this.txtFirstName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtFirstName.Name = "txtFirstName";
             this.txtFirstName.Size = new System.Drawing.Size(187, 23);
@@ -78,7 +69,7 @@ namespace Y2K_WMS
             // label2
             // 
             this.label2.AutoSize = true;
-            this.label2.Location = new System.Drawing.Point(209, 98);
+            this.label2.Location = new System.Drawing.Point(211, 88);
             this.label2.Name = "label2";
             this.label2.Size = new System.Drawing.Size(61, 15);
             this.label2.TabIndex = 1;
@@ -86,7 +77,7 @@ namespace Y2K_WMS
             // 
             // txtLastName
             // 
-            this.txtLastName.Location = new System.Drawing.Point(341, 98);
+            this.txtLastName.Location = new System.Drawing.Point(343, 88);
             this.txtLastName.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtLastName.Name = "txtLastName";
             this.txtLastName.Size = new System.Drawing.Size(187, 23);
@@ -95,7 +86,7 @@ namespace Y2K_WMS
             // label3
             // 
             this.label3.AutoSize = true;
-            this.label3.Location = new System.Drawing.Point(210, 148);
+            this.label3.Location = new System.Drawing.Point(212, 138);
             this.label3.Name = "label3";
             this.label3.Size = new System.Drawing.Size(41, 15);
             this.label3.TabIndex = 1;
@@ -103,7 +94,7 @@ namespace Y2K_WMS
             // 
             // txtPhone
             // 
-            this.txtPhone.Location = new System.Drawing.Point(342, 148);
+            this.txtPhone.Location = new System.Drawing.Point(344, 138);
             this.txtPhone.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPhone.Name = "txtPhone";
             this.txtPhone.Size = new System.Drawing.Size(187, 23);
@@ -112,7 +103,7 @@ namespace Y2K_WMS
             // label4
             // 
             this.label4.AutoSize = true;
-            this.label4.Location = new System.Drawing.Point(210, 200);
+            this.label4.Location = new System.Drawing.Point(212, 190);
             this.label4.Name = "label4";
             this.label4.Size = new System.Drawing.Size(36, 15);
             this.label4.TabIndex = 1;
@@ -120,7 +111,7 @@ namespace Y2K_WMS
             // 
             // txtEmail
             // 
-            this.txtEmail.Location = new System.Drawing.Point(342, 200);
+            this.txtEmail.Location = new System.Drawing.Point(344, 190);
             this.txtEmail.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtEmail.Name = "txtEmail";
             this.txtEmail.Size = new System.Drawing.Size(187, 23);
@@ -130,7 +121,7 @@ namespace Y2K_WMS
             // 
             this.groupBox1.Controls.Add(this.devRdoBtn);
             this.groupBox1.Controls.Add(this.adminRdoBtn);
-            this.groupBox1.Location = new System.Drawing.Point(279, 346);
+            this.groupBox1.Location = new System.Drawing.Point(281, 336);
             this.groupBox1.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.groupBox1.Name = "groupBox1";
             this.groupBox1.Padding = new System.Windows.Forms.Padding(3, 2, 3, 2);
@@ -167,7 +158,7 @@ namespace Y2K_WMS
             // label5
             // 
             this.label5.AutoSize = true;
-            this.label5.Location = new System.Drawing.Point(209, 246);
+            this.label5.Location = new System.Drawing.Point(211, 236);
             this.label5.Name = "label5";
             this.label5.Size = new System.Drawing.Size(57, 15);
             this.label5.TabIndex = 1;
@@ -175,7 +166,7 @@ namespace Y2K_WMS
             // 
             // txtPassword
             // 
-            this.txtPassword.Location = new System.Drawing.Point(341, 246);
+            this.txtPassword.Location = new System.Drawing.Point(343, 236);
             this.txtPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtPassword.Name = "txtPassword";
             this.txtPassword.PasswordChar = '*';
@@ -185,7 +176,7 @@ namespace Y2K_WMS
             // label6
             // 
             this.label6.AutoSize = true;
-            this.label6.Location = new System.Drawing.Point(210, 295);
+            this.label6.Location = new System.Drawing.Point(212, 285);
             this.label6.Name = "label6";
             this.label6.Size = new System.Drawing.Size(105, 15);
             this.label6.TabIndex = 1;
@@ -193,7 +184,7 @@ namespace Y2K_WMS
             // 
             // txtReenterPassword
             // 
-            this.txtReenterPassword.Location = new System.Drawing.Point(342, 295);
+            this.txtReenterPassword.Location = new System.Drawing.Point(344, 285);
             this.txtReenterPassword.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.txtReenterPassword.Name = "txtReenterPassword";
             this.txtReenterPassword.Size = new System.Drawing.Size(187, 23);
@@ -201,7 +192,7 @@ namespace Y2K_WMS
             // 
             // registerBtn
             // 
-            this.registerBtn.Location = new System.Drawing.Point(319, 436);
+            this.registerBtn.Location = new System.Drawing.Point(321, 426);
             this.registerBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.registerBtn.Name = "registerBtn";
             this.registerBtn.Size = new System.Drawing.Size(179, 22);
@@ -212,7 +203,7 @@ namespace Y2K_WMS
             // 
             // backBtn
             // 
-            this.backBtn.Location = new System.Drawing.Point(366, 478);
+            this.backBtn.Location = new System.Drawing.Point(368, 468);
             this.backBtn.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.backBtn.Name = "backBtn";
             this.backBtn.Size = new System.Drawing.Size(82, 22);
@@ -221,71 +212,11 @@ namespace Y2K_WMS
             this.backBtn.UseVisualStyleBackColor = true;
             this.backBtn.Click += new System.EventHandler(this.backBtn_Click);
             // 
-            // menuStrip1
-            // 
-            this.menuStrip1.Items.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.homeToolStripMenuItem,
-            this.editToolStripMenuItem,
-            this.logoutToolStripMenuItem,
-            this.logoutToolStripMenuItem1});
-            this.menuStrip1.Location = new System.Drawing.Point(0, 0);
-            this.menuStrip1.Name = "menuStrip1";
-            this.menuStrip1.Size = new System.Drawing.Size(821, 24);
-            this.menuStrip1.TabIndex = 5;
-            this.menuStrip1.Text = "Home";
-            // 
-            // homeToolStripMenuItem
-            // 
-            this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
-            this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.homeToolStripMenuItem.Text = "Home";
-            // 
-            // editToolStripMenuItem
-            // 
-            this.editToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
-            this.addProjectToolStripMenuItem,
-            this.editProjectToolStripMenuItem,
-            this.allocateTasksToolStripMenuItem});
-            this.editToolStripMenuItem.Name = "editToolStripMenuItem";
-            this.editToolStripMenuItem.Size = new System.Drawing.Size(39, 20);
-            this.editToolStripMenuItem.Text = "Edit";
-            // 
-            // addProjectToolStripMenuItem
-            // 
-            this.addProjectToolStripMenuItem.Name = "addProjectToolStripMenuItem";
-            this.addProjectToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.addProjectToolStripMenuItem.Text = "Add project";
-            // 
-            // editProjectToolStripMenuItem
-            // 
-            this.editProjectToolStripMenuItem.Name = "editProjectToolStripMenuItem";
-            this.editProjectToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.editProjectToolStripMenuItem.Text = "Edit project";
-            // 
-            // allocateTasksToolStripMenuItem
-            // 
-            this.allocateTasksToolStripMenuItem.Name = "allocateTasksToolStripMenuItem";
-            this.allocateTasksToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
-            this.allocateTasksToolStripMenuItem.Text = "Allocate tasks";
-            // 
-            // logoutToolStripMenuItem
-            // 
-            this.logoutToolStripMenuItem.Name = "logoutToolStripMenuItem";
-            this.logoutToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
-            this.logoutToolStripMenuItem.Text = "About";
-            // 
-            // logoutToolStripMenuItem1
-            // 
-            this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
-            this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
-            this.logoutToolStripMenuItem1.Text = "Logout";
-            // 
             // RegistrationView
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(7F, 15F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(821, 531);
-            this.Controls.Add(this.menuStrip1);
             this.Controls.Add(this.backBtn);
             this.Controls.Add(this.registerBtn);
             this.Controls.Add(this.groupBox1);
@@ -307,8 +238,6 @@ namespace Y2K_WMS
             this.Load += new System.EventHandler(this.RegistrationView_Load);
             this.groupBox1.ResumeLayout(false);
             this.groupBox1.PerformLayout();
-            this.menuStrip1.ResumeLayout(false);
-            this.menuStrip1.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -333,13 +262,5 @@ namespace Y2K_WMS
         private System.Windows.Forms.TextBox txtReenterPassword;
         private System.Windows.Forms.Button registerBtn;
         private System.Windows.Forms.Button backBtn;
-        private System.Windows.Forms.MenuStrip menuStrip1;
-        private System.Windows.Forms.ToolStripMenuItem homeToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem addProjectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem editProjectToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem allocateTasksToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
-        private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
     }
 }

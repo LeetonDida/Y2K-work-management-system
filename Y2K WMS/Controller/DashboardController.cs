@@ -14,6 +14,8 @@ namespace Y2K_WMS.Controller
         SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
         AttachDbFilename=C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\Y2Kdb.mdf;Integrated Security=True");
 
+        List<string> subTaskList = new List<string>();
+
         public void loadComboBox(ComboBox projectCmboBox, List<int> projectId)
         {
             string query = "SELECT * FROM Project";
@@ -30,7 +32,7 @@ namespace Y2K_WMS.Controller
             }
         }
 
-        internal void updateDashBoard(ComboBox projectCmboBox, Label lblCompletionStatus, ListBox assignedMembers, ListBox tasks)
+        internal void updateDashBoard(ComboBox projectCmboBox, Label lblCompletionStatus, ListBox assignedMembers, ListBox tasks, ListBox subTasks)
         {
             string query = string.Format("SELECT Id, completionStatus FROM Project WHERE projectName = '{0}'", projectCmboBox.SelectedItem.ToString());
             SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
@@ -46,7 +48,25 @@ namespace Y2K_WMS.Controller
 
             updateMembersListBox(selectedProjectId, assignedMembers);
             updateTaskListBox(tasks, selectedProjectId);
+            updateSubtaskListBox(subTasks, selectedProjectId);
 
+        }
+
+        private void updateSubtaskListBox(ListBox subTasks, string selectedProjectId)
+        {
+            subTasks.DataSource = null;
+            string query = string.Format("SELECT * from Task where projectId = '{0}'", selectedProjectId);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+
+            for (int i = 0; i < table.Rows.Count; ++i)
+            {
+                string task = Convert.ToString(table.Rows[i]["subTask"]);
+                subTaskList = task.Split(',').Select(Convert.ToString).ToList();
+                //subTasks.Items.Add(task);
+            }
+            subTasks.DataSource = subTaskList;
         }
 
         private void updateTaskListBox(ListBox tasksListBox, string selectedProjectId)

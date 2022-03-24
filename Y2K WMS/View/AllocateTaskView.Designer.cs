@@ -37,6 +37,7 @@ namespace Y2K_WMS.View
             this.LstBoxSelectedMembers = new System.Windows.Forms.ListBox();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
@@ -116,9 +117,18 @@ namespace Y2K_WMS.View
             // 
             // homeToolStripMenuItem
             // 
+            this.homeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboardToolStripMenuItem});
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.homeToolStripMenuItem.Text = "Home";
+            // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -133,20 +143,23 @@ namespace Y2K_WMS.View
             // addProjectToolStripMenuItem
             // 
             this.addProjectToolStripMenuItem.Name = "addProjectToolStripMenuItem";
-            this.addProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.addProjectToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.addProjectToolStripMenuItem.Text = "Add project";
+            this.addProjectToolStripMenuItem.Click += new System.EventHandler(this.addProjectToolStripMenuItem_Click);
             // 
             // editProjectToolStripMenuItem
             // 
             this.editProjectToolStripMenuItem.Name = "editProjectToolStripMenuItem";
-            this.editProjectToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.editProjectToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.editProjectToolStripMenuItem.Text = "Edit project";
+            this.editProjectToolStripMenuItem.Click += new System.EventHandler(this.editProjectToolStripMenuItem_Click);
             // 
             // allocateTasksToolStripMenuItem
             // 
             this.allocateTasksToolStripMenuItem.Name = "allocateTasksToolStripMenuItem";
-            this.allocateTasksToolStripMenuItem.Size = new System.Drawing.Size(180, 22);
+            this.allocateTasksToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.allocateTasksToolStripMenuItem.Text = "Allocate tasks";
+            this.allocateTasksToolStripMenuItem.Click += new System.EventHandler(this.allocateTasksToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -159,6 +172,7 @@ namespace Y2K_WMS.View
             this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
             this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
             this.logoutToolStripMenuItem1.Text = "Logout";
+            this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
             // 
             // AllocateTaskView
             // 
@@ -197,5 +211,6 @@ namespace Y2K_WMS.View
         private System.Windows.Forms.ToolStripMenuItem allocateTasksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
+        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
     }
 }

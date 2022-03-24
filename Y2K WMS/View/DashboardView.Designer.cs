@@ -39,12 +39,15 @@ namespace Y2K_WMS.View
             this.label4 = new System.Windows.Forms.Label();
             this.menuStrip1 = new System.Windows.Forms.MenuStrip();
             this.homeToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
+            this.dashboardToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.addProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.editProjectToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.allocateTasksToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem = new System.Windows.Forms.ToolStripMenuItem();
             this.logoutToolStripMenuItem1 = new System.Windows.Forms.ToolStripMenuItem();
+            this.lstBxSubtask = new System.Windows.Forms.ListBox();
+            this.label5 = new System.Windows.Forms.Label();
             this.menuStrip1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -108,7 +111,7 @@ namespace Y2K_WMS.View
             this.lstBoxTasks.ItemHeight = 15;
             this.lstBoxTasks.Location = new System.Drawing.Point(73, 227);
             this.lstBoxTasks.Name = "lstBoxTasks";
-            this.lstBoxTasks.Size = new System.Drawing.Size(305, 109);
+            this.lstBoxTasks.Size = new System.Drawing.Size(305, 34);
             this.lstBoxTasks.TabIndex = 5;
             // 
             // label4
@@ -132,12 +135,22 @@ namespace Y2K_WMS.View
             this.menuStrip1.Size = new System.Drawing.Size(974, 24);
             this.menuStrip1.TabIndex = 6;
             this.menuStrip1.Text = "Home";
+            this.menuStrip1.ItemClicked += new System.Windows.Forms.ToolStripItemClickedEventHandler(this.menuStrip1_ItemClicked);
             // 
             // homeToolStripMenuItem
             // 
+            this.homeToolStripMenuItem.DropDownItems.AddRange(new System.Windows.Forms.ToolStripItem[] {
+            this.dashboardToolStripMenuItem});
             this.homeToolStripMenuItem.Name = "homeToolStripMenuItem";
             this.homeToolStripMenuItem.Size = new System.Drawing.Size(52, 20);
             this.homeToolStripMenuItem.Text = "Home";
+            // 
+            // dashboardToolStripMenuItem
+            // 
+            this.dashboardToolStripMenuItem.Name = "dashboardToolStripMenuItem";
+            this.dashboardToolStripMenuItem.Size = new System.Drawing.Size(131, 22);
+            this.dashboardToolStripMenuItem.Text = "Dashboard";
+            this.dashboardToolStripMenuItem.Click += new System.EventHandler(this.dashboardToolStripMenuItem_Click);
             // 
             // editToolStripMenuItem
             // 
@@ -154,18 +167,21 @@ namespace Y2K_WMS.View
             this.addProjectToolStripMenuItem.Name = "addProjectToolStripMenuItem";
             this.addProjectToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.addProjectToolStripMenuItem.Text = "Add project";
+            this.addProjectToolStripMenuItem.Click += new System.EventHandler(this.addProjectToolStripMenuItem_Click_1);
             // 
             // editProjectToolStripMenuItem
             // 
             this.editProjectToolStripMenuItem.Name = "editProjectToolStripMenuItem";
             this.editProjectToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.editProjectToolStripMenuItem.Text = "Edit project";
+            this.editProjectToolStripMenuItem.Click += new System.EventHandler(this.editProjectToolStripMenuItem_Click_1);
             // 
             // allocateTasksToolStripMenuItem
             // 
             this.allocateTasksToolStripMenuItem.Name = "allocateTasksToolStripMenuItem";
             this.allocateTasksToolStripMenuItem.Size = new System.Drawing.Size(146, 22);
             this.allocateTasksToolStripMenuItem.Text = "Allocate tasks";
+            this.allocateTasksToolStripMenuItem.Click += new System.EventHandler(this.allocateTasksToolStripMenuItem_Click);
             // 
             // logoutToolStripMenuItem
             // 
@@ -178,6 +194,26 @@ namespace Y2K_WMS.View
             this.logoutToolStripMenuItem1.Name = "logoutToolStripMenuItem1";
             this.logoutToolStripMenuItem1.Size = new System.Drawing.Size(57, 20);
             this.logoutToolStripMenuItem1.Text = "Logout";
+            this.logoutToolStripMenuItem1.Click += new System.EventHandler(this.logoutToolStripMenuItem1_Click);
+            // 
+            // lstBxSubtask
+            // 
+            this.lstBxSubtask.FormattingEnabled = true;
+            this.lstBxSubtask.ItemHeight = 15;
+            this.lstBxSubtask.Location = new System.Drawing.Point(73, 305);
+            this.lstBxSubtask.Name = "lstBxSubtask";
+            this.lstBxSubtask.Size = new System.Drawing.Size(305, 139);
+            this.lstBxSubtask.TabIndex = 5;
+            this.lstBxSubtask.SelectedIndexChanged += new System.EventHandler(this.lstBxSubtask_SelectedIndexChanged);
+            // 
+            // label5
+            // 
+            this.label5.AutoSize = true;
+            this.label5.Location = new System.Drawing.Point(193, 287);
+            this.label5.Name = "label5";
+            this.label5.Size = new System.Drawing.Size(95, 15);
+            this.label5.TabIndex = 3;
+            this.label5.Text = "Project sub tasks";
             // 
             // DashboardView
             // 
@@ -185,9 +221,11 @@ namespace Y2K_WMS.View
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.ClientSize = new System.Drawing.Size(974, 529);
             this.Controls.Add(this.menuStrip1);
+            this.Controls.Add(this.lstBxSubtask);
             this.Controls.Add(this.lstBoxTasks);
             this.Controls.Add(this.label3);
             this.Controls.Add(this.lblProjectStatus);
+            this.Controls.Add(this.label5);
             this.Controls.Add(this.label4);
             this.Controls.Add(this.label2);
             this.Controls.Add(this.label1);
@@ -221,5 +259,8 @@ namespace Y2K_WMS.View
         private System.Windows.Forms.ToolStripMenuItem allocateTasksToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem;
         private System.Windows.Forms.ToolStripMenuItem logoutToolStripMenuItem1;
+        private System.Windows.Forms.ListBox lstBxSubtask;
+        private System.Windows.Forms.Label label5;
+        private System.Windows.Forms.ToolStripMenuItem dashboardToolStripMenuItem;
     }
 }

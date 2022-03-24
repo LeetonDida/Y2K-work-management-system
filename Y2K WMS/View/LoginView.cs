@@ -36,15 +36,17 @@ namespace Y2K_WMS
                     if(controller.verifyUser(email, pass))
                     {
                         MessageBox.Show("Logged in as Admin", "Login success!");
-                        LoginView login = new LoginView();
-                        login.Hide();
                         View.DashboardView dashboard = new View.DashboardView();
                         dashboard.Show();
+                        this.Hide();
                     }
                     else
                     {
                         //add code to log in as developer
                         MessageBox.Show("Logged in as Developer", "Login success!");
+                        this.Hide();
+                        View.DashboardView dashboard = new View.DashboardView();
+                        dashboard.Show();
                     }
                     
                 }

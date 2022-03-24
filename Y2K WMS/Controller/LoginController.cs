@@ -14,6 +14,8 @@ namespace Y2K_WMS.Controller
         SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
         AttachDbFilename=C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\Y2Kdb.mdf;Integrated Security=True");
 
+        public bool isAdmin { get; set; }
+        public int userId{ get; set; }
         public bool login(string email, string pass)
         {
             connection.Open();
@@ -24,6 +26,7 @@ namespace Y2K_WMS.Controller
             adapter.Fill(dataTable);
             connection.Close();
 
+            userId = Convert.ToInt32(dataTable.Rows[0]["Id"]);
             if (dataTable.Rows.Count == 1)
             {
                 return true;
@@ -46,10 +49,12 @@ namespace Y2K_WMS.Controller
             {
                 if(Convert.ToBoolean(dr["isAdmin"]) == true)
                 {
+                    isAdmin = true;
                     return true;
                 }
                 else
                 {
+                    isAdmin = false;
                     return false;
                 }
             }

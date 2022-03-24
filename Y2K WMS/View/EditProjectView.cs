@@ -18,12 +18,22 @@ namespace Y2K_WMS.View
         Model.TaskModel taskModel = new Model.TaskModel();
         List<string> subtasksList = new List<string>();
         List<string> commentsList = new List<string>();
+        Controller.loginController loginController = new Controller.loginController();
+        bool isAdmin;
 
         public EditProjectView()
         {
             InitializeComponent();
             taskGrpBox.Enabled = false;
             Controller.EditProjectController.loadComboBox(cmboBoxSelectProject, projectId);
+            isAdmin = loginController.isAdmin;
+
+            //sandboxing the user interface
+            if (!isAdmin)
+            {
+                addProjectToolStripMenuItem.Visible = false;
+                allocateTasksToolStripMenuItem.Visible = false;
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -100,53 +110,108 @@ namespace Y2K_WMS.View
 
         private void btnSave_Click(object sender, EventArgs e)
         {
-
-            if(chkBoxCompleted.Checked == true)
+            if (editProjectController.verifyUserTaskId())
             {
-                //delete the project
-                if (editProjectController.deleteProject())
+                if (chkBoxCompleted.Checked == true)
                 {
-                    MessageBox.Show("Project deleted successfully", "Success");
-                }
-            }
-            else
-            {
-                if (!(cmboBoxSelectProject.SelectedIndex == -1 || subtasksList.Count == 0 && commentsList.Count == 0))
-                {
-                    string subtasks = string.Join(",", subtasksList);
-                    string comments = string.Join(",", commentsList);
-
-                    taskModel.name = txtTaskName.Text.Trim();
-                    taskModel.comment = comments;
-                    taskModel.subTask = subtasks;
-                    projectModel.completionStatus = int.Parse(txtCompletionStatus.Text.Trim());
-
-                    bool check = editProjectController.updateProject(projectModel);
-                    bool check2 = editProjectController.updateTask(taskModel);
-
-                    if (check && check2)
+                    //delete the project
+                    if (editProjectController.deleteProject())
                     {
-                        MessageBox.Show("Project updated", "Success!");
-                        //go to new form
-                    }
-                    else
-                    {
-                        MessageBox.Show("Failed to save data. Check your details and try again", "Error");
+                        MessageBox.Show("Project deleted successfully", "Success");
+                        View.DashboardView dashboardView = new View.DashboardView();
+                        this.Hide();
+                        dashboardView.Show();
                     }
                 }
                 else
                 {
-                    MessageBox.Show("Please select a project and enter all the required fields.", "Error");
-                }
+                    if (!(cmboBoxSelectProject.SelectedIndex == -1 || subtasksList.Count == 0 && commentsList.Count == 0))
+                    {
+                        string subtasks = string.Join(",", subtasksList);
+                        string comments = string.Join(",", commentsList);
 
+                        taskModel.name = txtTaskName.Text.Trim();
+                        taskModel.comment = comments;
+                        taskModel.subTask = subtasks;
+                        projectModel.completionStatus = int.Parse(txtCompletionStatus.Text.Trim());
+
+                        bool check = editProjectController.updateProject(projectModel);
+                        bool check2 = editProjectController.updateTask(taskModel);
+
+                        if (check && check2)
+                        {
+                            MessageBox.Show("Project updated", "Success!");
+                            //go to new form
+                            View.DashboardView dashboardView = new View.DashboardView();
+                            this.Hide();
+                            dashboardView.Show();
+                        }
+                        else
+                        {
+                            MessageBox.Show("Failed to save data. Check your details and try again", "Error");
+                        }
+                    }
+                    else
+                    {
+                        MessageBox.Show("Please select a project and enter all the required fields.", "Error");
+                    }
+
+                }
             }
+            else
+            {
+                MessageBox.Show("Sorry you do not have the rights to edit this project task.", "Error");
+                View.DashboardView dashboardView = new View.DashboardView();
+                this.Hide();
+                dashboardView.Show();
+            }
+           
         }
 
         private void allocateTasksToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            View.AllocateTaskView allocateTaskView = new AllocateTaskView();
+
+        }
+
+        private void allocateTasksToolStripMenuItem_Click_1(object sender, EventArgs e)
+        {
+
+            View.AllocateTaskView allocateTaskView = new View.AllocateTaskView();
             this.Hide();
             allocateTaskView.Show();
+        }
+
+        private void editProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.EditProjectView editProjectView = new View.EditProjectView();
+            editProjectView.Show();
+            this.Hide();
+        }
+
+        private void addProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.AddProjectView addProjectView = new View.AddProjectView();
+            this.Hide();
+            addProjectView.Show();
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.DashboardView dashboardView = new View.DashboardView();
+            this.Hide();
+            dashboardView.Show(); 
+        }
+
+        private void EditProjectView_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LoginView loginView = new LoginView();
+            this.Hide();
+            loginView.Show();
         }
     }
 }

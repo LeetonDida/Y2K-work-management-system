@@ -72,6 +72,9 @@ namespace Y2K_WMS.View
                     MessageBox.Show("Project created succesfully.");
                     grpBoxAddTasks.Enabled = false;
                     txtProjectTitle.Enabled = false;
+                    DashboardView dashboardView = new DashboardView();
+                    this.Hide();
+                    dashboardView.Show();
                 }
                 else
                 {
@@ -136,5 +139,40 @@ namespace Y2K_WMS.View
             }
         }
 
+        private void addProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.AddProjectView addProjectView = new View.AddProjectView();
+            this.Hide();
+            addProjectView.Show();
+        }
+
+        private void allocateTasksToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+
+            View.AllocateTaskView allocateTaskView = new View.AllocateTaskView();
+            this.Hide();
+            allocateTaskView.Show();
+        }
+
+        private void editProjectToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.EditProjectView editProjectView = new View.EditProjectView();
+            this.Hide();
+            editProjectView.Show();
+        }
+
+        private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
+        {
+            View.DashboardView dashboardView = new View.DashboardView();
+            this.Hide();
+            dashboardView.Show();
+        }
+
+        private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
+        {
+            LoginView loginView = new LoginView();
+            this.Hide();
+            loginView.Show();
+        }
     }
 }

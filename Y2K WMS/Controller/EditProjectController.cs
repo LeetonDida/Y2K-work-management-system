@@ -15,7 +15,10 @@ namespace Y2K_WMS.Controller
         private static SqlConnection connection = new SqlConnection(@"Data Source=(LocalDB)\MSSQLLocalDB;
         AttachDbFilename=C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\Y2Kdb.mdf;Integrated Security=True");
 
+        Controller.loginController  user = new Controller.loginController();
+
         string selectedProjectId;
+        int taskId = -1;
         internal static void loadComboBox(ComboBox cmboBoxSelectProject, List<int> projectId)
         {
             string query = "SELECT * FROM Project";
@@ -58,6 +61,7 @@ namespace Y2K_WMS.Controller
             DataTable table = new DataTable();
             adapter.Fill(table);
 
+            taskId = Convert.ToInt32( table.Rows[0]["Id"]);
             for (int i = 0; i < table.Rows.Count; ++i)
             {
                 string task = Convert.ToString(table.Rows[i]["name"]);
@@ -137,6 +141,29 @@ namespace Y2K_WMS.Controller
             {
                 return false;
             }
+        }
+
+        public bool verifyUserTaskId()
+        {
+            bool check = false;
+            string query = string.Format("SELECT taskId FROM Developer WHERE taskId = '{0}'", taskId);
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            DataTable table = new DataTable();
+            adapter.Fill(table);
+            
+            if(!(table.Rows.Count == 0))
+            {
+                int userTaskId = Convert.ToInt32(table.Rows[0]["taskId"]);
+                if(userTaskId == taskId)
+                {
+                    check = true;
+                }
+            }
+            else
+            {
+                check = false;
+            }
+            return check;
         }
     }
 }

@@ -7,4 +7,4 @@ build_property.PublishSingleFile =
 build_property.IncludeAllContentForSelfExtract = 
 build_property._SupportedPlatformList = Android,iOS,Linux,macOS,Windows
 build_property.RootNamespace = Y2K_WMS
-build_property.ProjectDir = C:\Users\leeto\Source\Repos\Y2K_work_management_system\Y2K WMS\
+build_property.ProjectDir = C:\Users\leeto\source\repos\Y2K_work_management_system\Y2K WMS\
