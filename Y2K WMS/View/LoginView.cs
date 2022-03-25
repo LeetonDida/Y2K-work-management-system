@@ -12,10 +12,12 @@ namespace Y2K_WMS
 {
     public partial class LoginView : Form
     {
+        View.DashboardView dashboard = new View.DashboardView();
         public LoginView()
         {
             InitializeComponent();
         }
+        bool isAdmin;
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -36,9 +38,9 @@ namespace Y2K_WMS
                     if(controller.verifyUser(email, pass))
                     {
                         MessageBox.Show("Logged in as Admin", "Login success!");
-                        View.DashboardView dashboard = new View.DashboardView();
-                        dashboard.Show();
                         this.Hide();
+                        dashboard.isAdmin = controller.isAdmin;
+                        dashboard.Show();
                     }
                     else
                     {
@@ -74,6 +76,11 @@ namespace Y2K_WMS
         private void lblExit_Click(object sender, EventArgs e)
         {
             Environment.Exit(0);
+        }
+
+        private void txtPassword_TextChanged(object sender, EventArgs e)
+        {
+
         }
     }
 }

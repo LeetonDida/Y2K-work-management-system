@@ -16,25 +16,22 @@ namespace Y2K_WMS.View
         AddProjectView addProject = new AddProjectView();
 
         Controller.DashboardController dashboardController = new Controller.DashboardController();
+        Controller.EditProjectController editProjectController = new Controller.EditProjectController();
         List<int> projectId = new List<int>();
         ComboBox projectCmboBox;
         ListBox assignedMembersLstBox;
         Controller.loginController loginController = new Controller.loginController();
-        bool isAdmin;
+        public bool isAdmin { get; set; }
+        //bool isAdmin
         public DashboardView()
         {
             InitializeComponent();
             assignedMembersLstBox = lstBxAssignedMembers;
             projectCmboBox = cmboBxSelectProject;
             dashboardController.loadComboBox(projectCmboBox, projectId);
-            isAdmin = loginController.isAdmin;
+            //this.isAdmin = loginController.isAdmin;// mmmmmm
 
-            //sandboxing the user interface
-            if (!isAdmin)
-            {
-                addProjectToolStripMenuItem.Visible = false;
-                allocateTasksToolStripMenuItem.Visible = false;
-            }
+
         }
 
         private void addProjectToolStripMenuItem_Click(object sender, EventArgs e)
@@ -45,7 +42,11 @@ namespace Y2K_WMS.View
 
         private void DashboardView_Load(object sender, EventArgs e)
         {
-
+            if (!isAdmin)
+            {
+                addProjectToolStripMenuItem.Visible = false;
+                allocateTasksToolStripMenuItem.Visible = false;
+            }
         }
 
         private void cmboBxSelectProject_SelectedIndexChanged(object sender, EventArgs e)
@@ -58,6 +59,7 @@ namespace Y2K_WMS.View
         private void editProjectToolStripMenuItem_Click(object sender, EventArgs e)
         {
             View.EditProjectView editProjectView = new EditProjectView();
+            editProjectView.isAdmin = isAdmin;
             this.Hide();
             editProjectView.Show();
         }

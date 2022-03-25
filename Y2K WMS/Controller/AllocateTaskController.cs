@@ -70,7 +70,7 @@ namespace Y2K_WMS.Controller
 
                 string query = string.Format("UPDATE Developer SET taskId = '{0}' WHERE Id = '{1}'", selectedTaskId, memberId[k]);
                 SqlCommand command = new SqlCommand(query, connection);
-                i += command.ExecuteNonQuery();//FIX THE EXCEPTION HERE
+                i += command.ExecuteNonQuery();//FIX THE EXCEPTION HERE ()
             }
             connection.Close();
             if (!(i < 1))

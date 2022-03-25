@@ -26,16 +26,16 @@ namespace Y2K_WMS.Controller
             adapter.Fill(dataTable);
             connection.Close();
 
-            userId = Convert.ToInt32(dataTable.Rows[0]["Id"]);
+            
             if (dataTable.Rows.Count == 1)
             {
+                userId = Convert.ToInt32(dataTable.Rows[0]["Id"]);
                 return true;
             }
             else
             {
                 return false;
             }
-
         }
 
         public bool verifyUser(string email, string pass)
@@ -64,7 +64,25 @@ namespace Y2K_WMS.Controller
                 return false;
             }
 
-            
+            /*connection.Open();
+
+            string query = string.Format("select * from Users where password = '" + pass + "' and email ='" + email + "'");
+            SqlDataAdapter adapter = new SqlDataAdapter(query, connection);
+            DataTable dataTable = new DataTable();
+            adapter.Fill(dataTable);
+            connection.Close();
+
+
+            if (dataTable.Rows.Count == 1)
+            {
+                isAdmin = Convert.ToBoolean(dataTable.Rows[0]["isAdmin"]);
+                return true;
+            }
+            else
+            {
+                return false;
+            }*/
+
         }
     }
 }

@@ -13,27 +13,22 @@ namespace Y2K_WMS.View
     public partial class EditProjectView : Form
     {
         Controller.EditProjectController editProjectController = new Controller.EditProjectController();
+        View.DashboardView dashboardView = new View.DashboardView();
         List<int> projectId = new List<int>();
         Model.ProjectModel projectModel = new Model.ProjectModel();
         Model.TaskModel taskModel = new Model.TaskModel();
         List<string> subtasksList = new List<string>();
         List<string> commentsList = new List<string>();
         Controller.loginController loginController = new Controller.loginController();
-        bool isAdmin;
+        public bool isAdmin { get; set; }
 
         public EditProjectView()
         {
             InitializeComponent();
             taskGrpBox.Enabled = false;
             Controller.EditProjectController.loadComboBox(cmboBoxSelectProject, projectId);
-            isAdmin = loginController.isAdmin;
+            //isAdmin = loginController.isAdmin;
 
-            //sandboxing the user interface
-            if (!isAdmin)
-            {
-                addProjectToolStripMenuItem.Visible = false;
-                allocateTasksToolStripMenuItem.Visible = false;
-            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -197,14 +192,19 @@ namespace Y2K_WMS.View
 
         private void dashboardToolStripMenuItem_Click(object sender, EventArgs e)
         {
-            View.DashboardView dashboardView = new View.DashboardView();
+            //View.DashboardView dashboardView = new View.DashboardView();
+            dashboardView.isAdmin = isAdmin;
             this.Hide();
             dashboardView.Show(); 
         }
 
         private void EditProjectView_Load(object sender, EventArgs e)
         {
-
+            if (!isAdmin)
+            {
+                addProjectToolStripMenuItem.Visible = false;
+                allocateTasksToolStripMenuItem.Visible = false;
+            }
         }
 
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)
