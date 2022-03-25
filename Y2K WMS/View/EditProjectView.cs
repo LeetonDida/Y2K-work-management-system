@@ -200,11 +200,11 @@ namespace Y2K_WMS.View
 
         private void EditProjectView_Load(object sender, EventArgs e)
         {
-            if (!isAdmin)
-            {
-                addProjectToolStripMenuItem.Visible = false;
-                allocateTasksToolStripMenuItem.Visible = false;
-            }
+            //if (!isAdmin)
+            //{
+            //    addProjectToolStripMenuItem.Visible = false;
+            //    allocateTasksToolStripMenuItem.Visible = false;
+            //}
         }
 
         private void logoutToolStripMenuItem1_Click(object sender, EventArgs e)

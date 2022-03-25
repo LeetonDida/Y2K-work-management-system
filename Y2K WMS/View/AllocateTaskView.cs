@@ -91,5 +91,10 @@ namespace Y2K_WMS.View
             this.Hide();
             loginView.Show();
         }
+
+        private void AllocateTaskView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

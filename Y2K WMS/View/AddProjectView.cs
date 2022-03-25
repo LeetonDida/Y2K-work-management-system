@@ -174,5 +174,10 @@ namespace Y2K_WMS.View
             this.Hide();
             loginView.Show();
         }
+
+        private void AddProjectView_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

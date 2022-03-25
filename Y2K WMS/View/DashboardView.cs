@@ -42,11 +42,11 @@ namespace Y2K_WMS.View
 
         private void DashboardView_Load(object sender, EventArgs e)
         {
-            if (!isAdmin)
-            {
-                addProjectToolStripMenuItem.Visible = false;
-                allocateTasksToolStripMenuItem.Visible = false;
-            }
+            //if (!isAdmin)
+            //{
+            //    addProjectToolStripMenuItem.Visible = false;
+            //    allocateTasksToolStripMenuItem.Visible = false;
+            //}
         }
 
         private void cmboBxSelectProject_SelectedIndexChanged(object sender, EventArgs e)
